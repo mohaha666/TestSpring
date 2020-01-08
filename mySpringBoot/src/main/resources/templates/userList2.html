@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="jumbotron text-center">
+    <h1>我的第一个 Bootstrap 页面</h1>
+    <p>重置浏览器大小查看效果!</p>
+</div>
+<table class="table table-striped" th:if="${not #lists.isEmpty(data)}">
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>密码</th>
+            <th>密码</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="user : ${data}">
+            <td th:text="${user.userName}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.password}"></td>
+        </tr>
+    </tbody>
+</table>
+<script th:src="@{/jquery/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+<script th:inline="javascript">
+//    var single = [[${singlePerson}]];
+//    console.log(single.name+"/"+single.age);
+    function getName(name) {
+        console.log(name);
+    }
+</script>
+</body>
+</html>
